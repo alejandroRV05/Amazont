@@ -1,0 +1,40 @@
+<!-- Barra de las categories -->
+<div class="categories">
+  <button (click)="previousCategory()">patras</button>
+  <a href="#" style="text-decoration: none">{{ getCategory1() }} </a>
+  <a href="#" style="text-decoration: none">{{ getCategory2() }} </a>
+  <a href="#" style="text-decoration: none">{{ getCategory3() }} </a>
+  <a href="#" style="text-decoration: none">{{ getCategory4() }} </a>
+  <a href="#" style="text-decoration: none">{{ getCategory5() }} </a>
+  <button (click)="nextCategory()">palante</button>
+</div>
+<br /><br /><br /><br />
+<!-- Ofertes de Nadal -->
+<div class="xmas">
+  <button (click)="previousProduct2()">patras</button>
+  <img [src]="getProduct1()" />
+  <img [src]="getProduct2()" />
+  <img [src]="getProduct3()" />
+  <img [src]="getProduct4()" />
+  <button (click)="nextProduct2()">palante</button>
+</div>
+
+<br /><br /><br /><br />
+<!-- Productes -->
+<div class="products">
+  <button (click)="previousProduct()">patras</button>
+  <img [src]="getLeftProduct()" />
+  <img [src]="getCenterProduct()" />
+  <img [src]="getRightProduct()" />
+  <button (click)="nextProduct()">palante</button>
+</div>
+
+<!-- Categories en tendencia -->
+<div class="tendency">
+  <h3>Categorías en tendencia</h3>
+  <div class="row">
+    @for(tendencia of tendencias; track tendencia.id) {
+    <app-category [category]="tendencia.name"></app-category>
+    }
+  </div>
+</div>
