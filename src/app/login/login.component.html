@@ -1,0 +1,16 @@
+<div class="login">
+  <div class="login__container">
+    <h1>Login</h1>
+    <form>
+      <h5>User</h5>
+      <input type="text" id="username" [formControl]="username" />
+      <h5>Password</h5>
+      <input
+        type="password"
+        id="password"
+        [formControl]="password"
+      /><br /><br />
+      <button type="submit" class="" (click)="login()">Login</button>
+    </form>
+  </div>
+</div>

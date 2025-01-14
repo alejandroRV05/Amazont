@@ -1,0 +1,54 @@
+nav {
+  height: 3vw;
+  background-color: #2a6f97;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+nav input {
+  height: 2vw;
+  width: 80vw;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+nav i {
+  color: white;
+  padding-top: 0.5vw;
+  font-size: 1.5vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+
+nav i:hover {
+  color: black;
+}
+button {
+  display: flex;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-container input[type="search"] {
+  padding-left: 30px; /* Ajusta el espacio para el icono */
+}
+
+.search-container .icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Para que el icono no interfiera con el input */
+}

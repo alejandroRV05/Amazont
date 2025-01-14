@@ -1,7 +1,14 @@
 import { Routes } from '@angular/router';
 import { MainPageComponent } from './main-page/main-page.component';
+import { LoginComponent } from './login/login.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'main-page', pathMatch: 'full' },
-  { path: 'main-page', component: MainPageComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'home',
+    component: NavbarComponent,
+    children: [{ path: '', component: MainPageComponent }],
+  },
 ];
