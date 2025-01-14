@@ -1,0 +1,113 @@
+/* Estilos para la barra de categorías */
+.categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.categories button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+.categories button:hover {
+  background-color: #0056b3;
+}
+
+.categories a {
+  margin: 0 10px;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.categories a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para las ofertas de Navidad */
+.xmas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.xmas button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+.xmas button:hover {
+  background-color: #0056b3;
+}
+
+.xmas img {
+  margin: 0 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los productos */
+.products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.products button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+.products button:hover {
+  background-color: #0056b3;
+}
+
+.products img {
+  margin: 0 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para las categorías en tendencia */
+.tendency {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tendency h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tendency .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tendency app-category {
+  flex: 1 1 200px;
+  margin: 10px;
+}

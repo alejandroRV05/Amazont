@@ -1,32 +1,32 @@
 <!-- Barra de las categories -->
 <div class="categories">
-  <button (click)="previousCategory()">patras</button>
+  <button (click)="previousCategory()"><i class="fi fi-br-angle-double-small-left"></i></button>
   <a href="#" style="text-decoration: none">{{ getCategory1() }} </a>
   <a href="#" style="text-decoration: none">{{ getCategory2() }} </a>
   <a href="#" style="text-decoration: none">{{ getCategory3() }} </a>
   <a href="#" style="text-decoration: none">{{ getCategory4() }} </a>
   <a href="#" style="text-decoration: none">{{ getCategory5() }} </a>
-  <button (click)="nextCategory()">palante</button>
+  <button (click)="nextCategory()"><i class="fi fi-br-angle-double-small-right"></i></button>
 </div>
 <br /><br /><br /><br />
 <!-- Ofertes de Nadal -->
 <div class="xmas">
-  <button (click)="previousProduct2()">patras</button>
+  <button (click)="previousProduct2()"><i class="fi fi-br-angle-double-small-left"></i></button>
   <img [src]="getProduct1()" />
   <img [src]="getProduct2()" />
   <img [src]="getProduct3()" />
   <img [src]="getProduct4()" />
-  <button (click)="nextProduct2()">palante</button>
+  <button (click)="nextProduct2()"><i class="fi fi-br-angle-double-small-right"></i></button>
 </div>
 
 <br /><br /><br /><br />
 <!-- Productes -->
 <div class="products">
-  <button (click)="previousProduct()">patras</button>
+  <button (click)="previousProduct()"><i class="fi fi-br-angle-double-small-left"></i></button>
   <img [src]="getLeftProduct()" />
   <img [src]="getCenterProduct()" />
   <img [src]="getRightProduct()" />
-  <button (click)="nextProduct()">palante</button>
+  <button (click)="nextProduct()"><i class="fi fi-br-angle-double-small-right"></i></button>
 </div>
 
 <!-- Categories en tendencia -->
