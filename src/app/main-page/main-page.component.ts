@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { Category } from '../interfaces/category.interface';
 import { Product } from '../interfaces/product.interface';
 import { CategoryComponent } from '../category/category.component';
+import { ProductsComponent } from '../products/products.component';
 
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [CategoryComponent],
+  imports: [CategoryComponent, ProductsComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css',
 })
@@ -33,12 +34,48 @@ export class MainPageComponent {
   ];
 
   products: Product[] = [
-    { id: 1, name: 'Detergente', url: 'https://picsum.photos/id/237/200/200' },
-    { id: 2, name: 'Monopoly', url: 'https://picsum.photos/id/238/200/200' },
-    { id: 3, name: 'Balón', url: 'https://picsum.photos/id/239/200/200' },
-    { id: 4, name: 'Sartén', url: 'https://picsum.photos/id/240/200/200' },
-    { id: 5, name: 'Camisa', url: 'https://picsum.photos/id/241/200/200' },
-    { id: 6, name: 'Smartphone', url: 'https://picsum.photos/id/242/200/200' },
+    {
+      id: 1,
+      name: 'Detergente',
+      url: 'https://www.supercash.es/wp-content/uploads/2020/02/detergente-profesional_cabecera.png',
+      price: '10.00',
+      stars: 4,
+    },
+    {
+      id: 2,
+      name: 'Monopoly',
+      url: 'https://www.monodejuegos.shop/wp-content/uploads/2020/11/monopoly.png',
+      price: '20.00',
+      stars: 5,
+    },
+    {
+      id: 3,
+      name: 'Balón',
+      url: 'https://i1.t4s.cz/products/in9365/adidas-euro24-com-679082-in9365.png',
+      price: '15.00',
+      stars: 3,
+    },
+    {
+      id: 4,
+      name: 'Sartén',
+      url: 'https://cdn.speedsize.com/7ea397ab-9451-4e4a-a8e0-a877fed40d95/https://www.arcos.com/media/catalog/product/7/1/716400_1.png',
+      price: '25.00',
+      stars: 4,
+    },
+    {
+      id: 5,
+      name: 'Camisa',
+      url: 'https://media.wuerth.com/stmedia/modyf/eshop/products/std.lang.all/resolutions/normal/png-546x410px/26501189.png',
+      price: '30.00',
+      stars: 5,
+    },
+    {
+      id: 6,
+      name: 'Smartphone',
+      url: 'https://oukitel.com/cdn/shop/files/1___11.png?v=1732246275&width=600',
+      price: '500.00',
+      stars: 4,
+    },
   ];
 
   //Funciones relacionadas con los productos
@@ -152,5 +189,40 @@ export class MainPageComponent {
     this.cat3 = (this.cat3 - 1 + totalCategories) % totalCategories;
     this.cat4 = (this.cat4 - 1 + totalCategories) % totalCategories;
     this.cat5 = (this.cat5 - 1 + totalCategories) % totalCategories;
+  }
+
+  /*************************** */
+  // Índices visibles
+  s1 = signal(0);
+  s2 = signal(1);
+  s3 = signal(2);
+  s4 = signal(3);
+
+  // Productos visibles calculados dinámicamente
+  visibleProducts = computed(() => [
+    this.products[this.s1()],
+    this.products[this.s2()],
+    this.products[this.s3()],
+    this.products[this.s4()],
+  ]);
+
+  // Mover el carrusel hacia adelante (siguiente producto)
+  next() {
+    const totalProducts = this.products.length;
+
+    this.s1.set((this.s1() + 1) % totalProducts);
+    this.s2.set((this.s2() + 1) % totalProducts);
+    this.s3.set((this.s3() + 1) % totalProducts);
+    this.s4.set((this.s4() + 1) % totalProducts);
+  }
+
+  // Mover el carrusel hacia atrás (producto anterior)
+  previous() {
+    const totalProducts = this.products.length;
+
+    this.s1.set((this.s1() - 1 + totalProducts) % totalProducts);
+    this.s2.set((this.s2() - 1 + totalProducts) % totalProducts);
+    this.s3.set((this.s3() - 1 + totalProducts) % totalProducts);
+    this.s4.set((this.s4() - 1 + totalProducts) % totalProducts);
   }
 }

@@ -27,6 +27,27 @@
   </button>
 </div>
 
+<div class="carousel">
+  <button (click)="previous()">
+    <i class="fi fi-br-angle-double-small-left"></i>
+  </button>
+
+  <div class="products">
+    @for (product of visibleProducts(); track product.id) {
+    <app-products
+      [name]="product.name"
+      [url]="product.url"
+      [price]="product.price"
+      [stars]="product.stars"
+    ></app-products>
+    }
+  </div>
+
+  <button (click)="next()">
+    <i class="fi fi-br-angle-double-small-right"></i>
+  </button>
+</div>
+
 <br /><br /><br /><br />
 <!-- Productes -->
 <div class="products">
