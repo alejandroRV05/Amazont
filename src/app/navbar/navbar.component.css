@@ -1,11 +1,12 @@
 nav {
   height: 3vw;
-  background-color: #2a6f97;
-  color: white;
+  background-color: var(--nav);
+  color: var(--icon);
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: solid 0.10vw var(--text);
 }
 
 nav button {
@@ -19,11 +20,11 @@ nav input {
   width: 80vw;
   padding: 5px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--secondary);
 }
 
 nav i {
-  color: white;
+  color: var(--icon);
   padding-top: 0.5vw;
   font-size: 1.5vw;
   padding-left: 1vw;
@@ -31,7 +32,7 @@ nav i {
 }
 
 nav i:hover {
-  color: black;
+  color: var(--text);
 }
 button {
   display: flex;
@@ -42,13 +43,31 @@ button {
 }
 
 .search-container input[type="search"] {
-  padding-left: 30px; /* Ajusta el espacio para el icono */
+  padding-left: 4vw;
+  color: var(--text);
+  font-size: 1vw;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: var(--icon);
+  transition: border-color 0.5s;
+}
+
+.search-container input[type="search"]:focus {
+  border-color: var(--principal);
+  outline: none;
 }
 
 .search-container .icon {
+  font-size: 1.25vw;
+  color:var(--text);
   position: absolute;
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  pointer-events: none; /* Para que el icono no interfiera con el input */
+  pointer-events: none;
+}
+
+.search-container input[type="search"]::placeholder {
+  color: var(--text);
+  opacity: 1;
 }

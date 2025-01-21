@@ -1,7 +1,8 @@
+
 <!-- Barra de las categories -->
 <div class="categories">
   <button (click)="previousCategory()">
-    <i class="fi fi-br-angle-double-small-left"></i>
+    <i class="fi fi-br-angle-double-small-left icon-sm"></i>
   </button>
   <a href="#" style="text-decoration: none">{{ getCategory1() }} </a>
   <a href="#" style="text-decoration: none">{{ getCategory2() }} </a>
@@ -9,27 +10,51 @@
   <a href="#" style="text-decoration: none">{{ getCategory4() }} </a>
   <a href="#" style="text-decoration: none">{{ getCategory5() }} </a>
   <button (click)="nextCategory()">
-    <i class="fi fi-br-angle-double-small-right"></i>
+    <i class="fi fi-br-angle-double-small-right icon-sm"></i>
   </button>
 </div>
-<br /><br /><br /><br />
+<div class="contenedor-principal">
 <!-- Ofertes de Nadal -->
+<div class="separador">
+  <hr class="linea" />
+  <h3>Ofertas de Navidad</h3>
+  <hr class="linea" />
+</div>
 <div class="xmas">
   <button (click)="previousProduct2()">
-    <i class="fi fi-br-angle-double-small-left"></i>
+    <i class="fi fi-br-angle-double-small-left icon"></i>
   </button>
-  <img [src]="getProduct1()" />
-  <img [src]="getProduct2()" />
-  <img [src]="getProduct3()" />
-  <img [src]="getProduct4()" />
+  <div class="container-xmas"><img [src]="getProduct1()" /></div>
+  <div class="container-xmas"><img [src]="getProduct2()" /></div>
+  <div class="container-xmas"><img [src]="getProduct3()" /></div>
+  <div class="container-xmas"><img [src]="getProduct4()" /></div>
   <button (click)="nextProduct2()">
-    <i class="fi fi-br-angle-double-small-right"></i>
+    <i class="fi fi-br-angle-double-small-right icon"></i>
   </button>
 </div>
 
+<!-- Productes -->
+<div class="separador">
+  <hr class="linea" />
+  <h3>Productos destacados</h3>
+  <hr class="linea" />
+</div>
+
+<!-- <div class="products">
+  <button (click)="previousProduct()">
+    <i class="fi fi-br-angle-double-small-left icon"></i>
+  </button>
+  <img [src]="getLeftProduct()" />
+  <img [src]="getCenterProduct()" />
+  <img [src]="getRightProduct()" />
+  <button (click)="nextProduct()">
+    <i class="fi fi-br-angle-double-small-right icon"></i>
+  </button>
+</div> -->
+
 <div class="carousel">
   <button (click)="previous()">
-    <i class="fi fi-br-angle-double-small-left"></i>
+    <i class="fi fi-br-angle-double-small-left icon"></i>
   </button>
 
   <div class="products">
@@ -44,30 +69,18 @@
   </div>
 
   <button (click)="next()">
-    <i class="fi fi-br-angle-double-small-right"></i>
+    <i class="fi fi-br-angle-double-small-right icon"></i>
   </button>
 </div>
-
-<br /><br /><br /><br />
-<!-- Productes -->
-<div class="products">
-  <button (click)="previousProduct()">
-    <i class="fi fi-br-angle-double-small-left"></i>
-  </button>
-  <img [src]="getLeftProduct()" />
-  <img [src]="getCenterProduct()" />
-  <img [src]="getRightProduct()" />
-  <button (click)="nextProduct()">
-    <i class="fi fi-br-angle-double-small-right"></i>
-  </button>
-</div>
-
 <!-- Categories en tendencia -->
 <div class="tendency">
   <h3>Categorías en tendencia</h3>
   <div class="row">
     @for(tendencia of tendencias; track tendencia.id) {
-    <app-category [category]="tendencia.name"></app-category>
+      <div class="contenedor-categoria">
+        <app-category [category]="tendencia.name"></app-category>
+      </div>
     }
   </div>
+</div>
 </div>

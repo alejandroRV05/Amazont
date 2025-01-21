@@ -1,4 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+  --principal:#0056b3;
+  --secondary: #A9D6E5;
+  --nav:#2a6f97;
+  --container:#61A5C2;
+  --container-hover: #468FAF;
+  --background: #e8f9ff;
+  --text:black;
+  --icon:white;
+  --hover: black;
+  --box-shadow-color: rgba(0, 0, 0, 0.3);
+  --background-container: white;
+}
+
+[data-theme='dark'] {
+  --principal: #1a73e8;
+  --secondary: #3c4043;
+  --nav:#2a6f97;
+  --container: #202124;
+  --container-hover: #2C7DA0;
+  --background: #121212;
+  --text:white;
+  --icon:black;
+  --hover: white;
+  --box-shadow-color: rgba(255, 255, 255, 0.3);
+  --background-container: black;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Amazon+Ember:wght@400;700&display=swap");
 
 * {
@@ -7,5 +34,7 @@
   font-family: "Amazon Ember", sans-serif;
 }
 html {
-  background-color: #e8f9ff;
+  background-color:var(--background);
 }
+
+
