@@ -10,10 +10,12 @@ import { Component, input } from '@angular/core';
 export class ProductsComponent {
   name = input.required<string>();
   url = input.required<string>();
-  price = input.required<string>();
+  price = input.required<number>();
   stars = input.required<number>();
+  discount = input<number>();
 
   numberStars: string = '';
+  discountedPrice: number = 0;
 
   getStars() {
     for (let i = 0; i < this.stars(); i++) {
@@ -21,7 +23,14 @@ export class ProductsComponent {
     }
   }
 
+  getDiscount() {
+    const discount = this.discount() || 0;
+    this.discountedPrice = this.price() - (this.price() * discount) / 100;
+    // console.debug('Discounted price:', this.discountedPrice);
+  }
+
   ngOnInit() {
     this.getStars();
+    this.getDiscount();
   }
 }

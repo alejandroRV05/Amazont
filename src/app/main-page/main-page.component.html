@@ -1,4 +1,3 @@
-
 <!-- Barra de las categories -->
 <div class="categories">
   <button (click)="previousCategory()">
@@ -14,73 +13,70 @@
   </button>
 </div>
 <div class="contenedor-principal">
-<!-- Ofertes de Nadal -->
-<div class="separador">
-  <hr class="linea" />
-  <h3>Ofertas de Navidad</h3>
-  <hr class="linea" />
-</div>
-<div class="xmas">
-  <button (click)="previousProduct2()">
-    <i class="fi fi-br-angle-double-small-left icon"></i>
-  </button>
-  <div class="container-xmas"><img [src]="getProduct1()" /></div>
-  <div class="container-xmas"><img [src]="getProduct2()" /></div>
-  <div class="container-xmas"><img [src]="getProduct3()" /></div>
-  <div class="container-xmas"><img [src]="getProduct4()" /></div>
-  <button (click)="nextProduct2()">
-    <i class="fi fi-br-angle-double-small-right icon"></i>
-  </button>
-</div>
+  <!-- Ofertes de Nadal -->
+  <div class="separador">
+    <hr class="linea" />
+    <h3>Ofertas de Navidad</h3>
+    <hr class="linea" />
+  </div>
+  <div class="carousel">
+    <button (click)="previous_discount()">
+      <i class="fi fi-br-angle-double-small-left icon"></i>
+    </button>
 
-<!-- Productes -->
-<div class="separador">
-  <hr class="linea" />
-  <h3>Productos destacados</h3>
-  <hr class="linea" />
-</div>
+    <div class="products">
+      @for (product of visibleDiscount; track product.id) {
+      <app-products
+        [name]="product.name"
+        [url]="product.url"
+        [price]="product.price"
+        [stars]="product.stars"
+        [discount]="product.discount"
+      ></app-products>
+      }
+    </div>
 
-<!-- <div class="products">
-  <button (click)="previousProduct()">
-    <i class="fi fi-br-angle-double-small-left icon"></i>
-  </button>
-  <img [src]="getLeftProduct()" />
-  <img [src]="getCenterProduct()" />
-  <img [src]="getRightProduct()" />
-  <button (click)="nextProduct()">
-    <i class="fi fi-br-angle-double-small-right icon"></i>
-  </button>
-</div> -->
-
-<div class="carousel">
-  <button (click)="previous()">
-    <i class="fi fi-br-angle-double-small-left icon"></i>
-  </button>
-
-  <div class="products">
-    @for (product of visibleProducts(); track product.id) {
-    <app-products
-      [name]="product.name"
-      [url]="product.url"
-      [price]="product.price"
-      [stars]="product.stars"
-    ></app-products>
-    }
+    <button (click)="next_discount()">
+      <i class="fi fi-br-angle-double-small-right icon"></i>
+    </button>
   </div>
 
-  <button (click)="next()">
-    <i class="fi fi-br-angle-double-small-right icon"></i>
-  </button>
-</div>
-<!-- Categories en tendencia -->
-<div class="tendency">
-  <h3>Categorías en tendencia</h3>
-  <div class="row">
-    @for(tendencia of tendencias; track tendencia.id) {
+  <!-- Productes -->
+  <div class="separador">
+    <hr class="linea" />
+    <h3>Productos destacados</h3>
+    <hr class="linea" />
+  </div>
+
+  <div class="carousel">
+    <button (click)="previous()">
+      <i class="fi fi-br-angle-double-small-left icon"></i>
+    </button>
+
+    <div class="products">
+      @for (product of visibleProducts; track product.id) {
+      <app-products
+        [name]="product.name"
+        [url]="product.url"
+        [price]="product.price"
+        [stars]="product.stars"
+      ></app-products>
+      }
+    </div>
+
+    <button (click)="next()">
+      <i class="fi fi-br-angle-double-small-right icon"></i>
+    </button>
+  </div>
+  <!-- Categories en tendencia -->
+  <div class="tendency">
+    <h3>Categorías en tendencia</h3>
+    <div class="row">
+      @for(tendencia of tendencias; track tendencia.id) {
       <div class="contenedor-categoria">
         <app-category [category]="tendencia.name"></app-category>
       </div>
-    }
+      }
+    </div>
   </div>
-</div>
 </div>
