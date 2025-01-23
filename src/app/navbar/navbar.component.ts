@@ -14,4 +14,8 @@ export class NavbarComponent {
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', newTheme);
   }
+
+  isDarkTheme(): boolean {
+    return document.documentElement.getAttribute('data-theme') === 'dark';
+  }
 }

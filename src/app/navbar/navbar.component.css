@@ -32,7 +32,7 @@ nav i {
 }
 
 nav i:hover {
-  color: var(--text);
+  color: var(--text-nav);
 }
 button {
   display: flex;
@@ -44,7 +44,7 @@ button {
 
 .search-container input[type="search"] {
   padding-left: 4vw;
-  color: var(--text);
+  color: var(--text-nav);
   font-size: 1vw;
   font-weight: bold;
   border-radius: 5px;
@@ -59,7 +59,7 @@ button {
 
 .search-container .icon {
   font-size: 1.25vw;
-  color:var(--text);
+  color:var(--text-nav);
   position: absolute;
   left: 10px;
   top: 50%;
@@ -68,6 +68,6 @@ button {
 }
 
 .search-container input[type="search"]::placeholder {
-  color: var(--text);
+  color: var(--text-nav);
   opacity: 1;
 }

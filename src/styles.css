@@ -6,6 +6,8 @@
   --container-hover: #468FAF;
   --background: #e8f9ff;
   --text:black;
+  --text-muted: #6c757d;
+  --text-nav: black;
   --icon:white;
   --hover: black;
   --box-shadow-color: rgba(0, 0, 0, 0.3);
@@ -13,17 +15,19 @@
 }
 
 [data-theme='dark'] {
-  --principal: #1a73e8;
+  --principal: #a5b3c5;
   --secondary: #3c4043;
-  --nav:#2a6f97;
-  --container: #202124;
-  --container-hover: #2C7DA0;
-  --background: #121212;
+  --nav:#343A40;
+  --container: #343A40;
+  --container-hover: #8b9ba1;
+  --background: #495057;
   --text:white;
-  --icon:black;
+  --text-muted: #ccd2d8;
+  --text-nav: black;
+  --icon:white;
   --hover: white;
   --box-shadow-color: rgba(255, 255, 255, 0.3);
-  --background-container: black;
+  --background-container: #6C757D;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Amazon+Ember:wght@400;700&display=swap");

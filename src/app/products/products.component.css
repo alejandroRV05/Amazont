@@ -1,11 +1,10 @@
 img {
   max-width: 15vw;
   max-height: 15vh;
-  /* background-color: var(--secondary); */
   border-radius: 0.25vw;
 }
 
-.product-container {
+/* .product-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +13,6 @@ img {
   margin: 1vw;
   padding: 0.5vw;
   border-radius: 0.5vw;
-  /* border: solid 0.2vw var(--container); */
   box-shadow: 0 0 1vw var(--box-shadow-color);
 }
 
@@ -46,4 +44,85 @@ img {
 
 .product-price-discount {
   text-decoration: line-through;
+} */
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--background-container);
+  margin: 1vw;
+  padding: 1.5vw;
+  border-radius: 0.75vw;
+  box-shadow: 0 0 1vw var(--box-shadow-color);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 2vw var(--box-shadow-color-hover);
+}
+
+.product-container img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1vw;
+  border-radius: 0.5vw;
+  transition: transform 0.3s;
+}
+
+.product-container img:hover {
+  transform: scale(1.1);
+}
+
+.product-container .product-name {
+  font-size: 1.8vw;
+  font-weight: bold;
+  margin-bottom: 0.5vw;
+  color: var(--text);
+}
+
+.product-container .product-price {
+  font-size: 1.5vw;
+  color: var(--text);
+  font-weight: bold;
+  margin-bottom: 0.5vw;
+}
+
+.product-container .product-price-discount {
+  font-size: 1.2vw;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  margin-bottom: 0.5vw;
+}
+
+.product-container .product-stars {
+  font-size: 1.5vw;
+  font-weight: bold;
+  color: #f39c12;
+  margin-bottom: 0.5vw;
+}
+
+.product-container .product-description {
+  font-size: 1.2vw;
+  color: var(--text-muted);
+  margin-bottom: 1vw;
+  padding: 0 1vw;
+}
+
+.product-discount {
+  font-size: 1.2vw;
+  color: #e74c3c;
+  font-weight: bold;
+  margin-bottom: 0.5vw;
+}
+
+.product-discounted {
+  font-size: 1.5vw;
+  color: var(--text);
+  font-weight: bold;
+  margin-bottom: 0.5vw;
+  background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+  border-radius: 0.5vw;
 }
